@@ -7,37 +7,37 @@ namespace _Source.PersonNode
     {
         public virtual string GetLeftSwapTrigger()
         {
-            return null;
+            return default;
         }
         
         public virtual string GetRightSwapTrigger()
         {
-            return null;
+            return default;
         }
         
         public virtual string GetBackSwapTrigger()
         {
-            return null;
+            return default;
         }
         
         public virtual string GetString()
         {
-            return null;
+            return default;
         }
 
         public virtual Sprite GetSprite()
         {
-            return null;
+            return default;
         }
 
-        public virtual void ConsentEffect()
+        public virtual int[] ConsentEffect()
         {
-            
+            return new[] { 0, 0, 0, 0 };
         }
         
-        public virtual void EffectOnFailure()
+        public virtual int[] EffectOnFailure()
         {
-            
+            return new[] { 0, 0, 0, 0 };
         }
     }
 }

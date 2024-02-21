@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Housemaid
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 552, y: -88}
+  position: {x: 568, y: -184}
   ports:
     keys:
     - Enter
@@ -65,7 +65,9 @@ MonoBehaviour:
     \u0441 \u0435\u0433\u043E \u043F\u0435\u0447\u0430\u0442\u044C\u044E \u0438 \u0441\u043F\u0438\u0441\u043E\u043A
     \u043F\u043E\u043A\u0443\u043F\u043E\u043A. \u042F \u0431\u0443\u0434\u0443 \u0441\u043F\u043E\u0440\u043E\u0432\u043E\u0436\u0434\u0430\u0442\u044C
     \u0432\u0430\u0441 \u0432 \u043F\u0443\u0442\u0438."
-  _personSprite: {fileID: 0}
+  _personSprite: {fileID: 21300000, guid: b91dd5acab4ad9c4e97415b285d89a02, type: 3}
+  _consentParameters: 0f0000000c000000f4ffffff05000000
+  _failureParameters: e7ffffff0000000019000000ecffffff
 --- !u!114 &-8594959450359104528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +81,7 @@ MonoBehaviour:
   m_Name: Trader
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 824, y: -280}
+  position: {x: 888, y: -456}
   ports:
     keys:
     - Enter
@@ -102,7 +104,10 @@ MonoBehaviour:
       _node: {fileID: -8594959450359104528}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Enter
+        node: {fileID: -7020106136355099552}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -111,7 +116,10 @@ MonoBehaviour:
       _node: {fileID: -8594959450359104528}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Enter
+        node: {fileID: 4055404979146440557}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -122,7 +130,79 @@ MonoBehaviour:
   _personName: "\u0421\u0442\u0440\u0430\u043D\u043D\u044B\u0439 \u0442\u043E\u0440\u0433\u043E\u0432\u0435\u0446"
   _personText: "\u0425\u043C. \u0412\u0438\u0436\u0443 \u0432\u044B \u0438\u0449\u0438\u0442\u0435
     \u0447\u0442\u043E-\u0442\u043E \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E\u0435"
-  _personSprite: {fileID: 0}
+  _personSprite: {fileID: 21300000, guid: 737603dea7fe59b47b9d7fb3a3de0913, type: 3}
+  _consentParameters: f0ffffffe2ffffff12000000f8ffffff
+  _failureParameters: 0c00000002000000f6ffffff18000000
+--- !u!114 &-8414083555038830000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc04e018feed4aff960d61287fe4a2d3, type: 3}
+  m_Name: Death
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1384, y: -88}
+  ports:
+    keys:
+    - Enter
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -8414083555038830000}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Left
+        node: {fileID: 1988568625462552099}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  _personName: "\u0421\u043C\u0435\u0440\u0442\u044C"
+  _personText: "\u0422\u044B \u0443\u043C\u0435\u0440 \u043E\u0442 \u043C\u0430\u0433\u0438\u0438"
+  _personSprite: {fileID: 21300000, guid: e71c21275e2feb64bb913f89ce351442, type: 3}
+--- !u!114 &-8300414520713779569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4469cf53bfb24ca792798ab9ceed05e2, type: 3}
+  m_Name: God
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1384, y: -216}
+  ports:
+    keys:
+    - Enter
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -8300414520713779569}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Right
+        node: {fileID: 1988568625462552099}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  _personName: "\u0411\u043E\u0433"
+  _personText: "\u041C\u0430\u0433\u0438\u044F \u043D\u0435 \u0441\u043C\u043E\u0433\u043B\u0430
+    \u0442\u0435\u0431\u044F \u043F\u043E\u0440\u0430\u0437\u0438\u0442\u044C \u0438
+    \u0442\u044B \u0441\u0442\u0430\u043B \u043F\u043E\u0432\u0435\u043B\u0438\u0442\u0435\u043B\u0435\u043C"
+  _personSprite: {fileID: 21300000, guid: 64694af5ce8efa4418fcda961c4a4ca5, type: 3}
 --- !u!114 &-7985232525380350655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +216,7 @@ MonoBehaviour:
   m_Name: Housemaid
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 824, y: -120}
+  position: {x: 888, y: -152}
   ports:
     keys:
     - Enter
@@ -159,7 +239,10 @@ MonoBehaviour:
       _node: {fileID: -7985232525380350655}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Enter
+        node: {fileID: 1988568625462552099}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -168,7 +251,10 @@ MonoBehaviour:
       _node: {fileID: -7985232525380350655}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Enter
+        node: {fileID: 1988568625462552099}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -179,7 +265,144 @@ MonoBehaviour:
   _personName: "\u0413\u043E\u0440\u043D\u0438\u0447\u043D\u0430\u044F"
   _personText: "\u0418\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u044B\u0439 \u0432\u044B
     \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
-  _personSprite: {fileID: 0}
+  _personSprite: {fileID: 21300000, guid: b91dd5acab4ad9c4e97415b285d89a02, type: 3}
+  _consentParameters: 01000000180000004a000000f3010000
+  _failureParameters: 000000000000000015000000f6ffffff
+--- !u!114 &-7020106136355099552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff082bcd00c47f1af5216698d4b8171, type: 3}
+  m_Name: Warrior
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1192, y: -600}
+  ports:
+    keys:
+    - Enter
+    - Right
+    - Left
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -7020106136355099552}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Right
+        node: {fileID: -8594959450359104528}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Right
+      _node: {fileID: -7020106136355099552}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -1529392479423747884}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Left
+      _node: {fileID: -7020106136355099552}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -6325401430210273219}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  Right: 
+  Left: 
+  _personName: "\u0412\u043E\u0438\u043D"
+  _personText: "\u0412\u0438\u0436\u0443 \u0442\u044B \u043F\u043E\u043A\u0443\u043F\u0430\u0435\u0448\u044C
+    \u0434\u0440\u0435\u0432\u043D\u0438\u0438 \u0440\u0435\u043B\u0438\u043A\u0432\u0438\u0438.
+    \u041F\u043E\u0439\u0434\u0451\u043C \u043A \u043A\u043E\u0440\u043E\u043B\u044E.
+    \u041E\u043D \u0440\u0435\u0448\u0438\u0442, \u0447\u0442\u043E \u0434\u0435\u043B\u0430\u0442\u044C
+    \u0441 \u0442\u043E\u0431\u043E\u0439, \u0437\u0430 \u0442\u0432\u043E\u0439
+    \u0433\u0440\u0435\u0445"
+  _personSprite: {fileID: 21300000, guid: 0888097f1a8b8df43b159db18e851fd9, type: 3}
+  _consentParameters: 00000000ceffffff00000000ecffffff
+  _failureParameters: 00000000ceffffff00000000ecffffff
+--- !u!114 &-6325401430210273219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff082bcd00c47f1af5216698d4b8171, type: 3}
+  m_Name: Warrior
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1432, y: -504}
+  ports:
+    keys:
+    - Enter
+    - Right
+    - Left
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -6325401430210273219}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Left
+        node: {fileID: -7020106136355099552}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Right
+      _node: {fileID: -6325401430210273219}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -1529392479423747884}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Left
+      _node: {fileID: -6325401430210273219}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -1529392479423747884}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  Right: 
+  Left: 
+  _personName: "\u0412\u043E\u0438\u043D"
+  _personText: "\u041E\u0442\u0433\u043E\u0432\u043E\u0440\u043A\u0438 \u043D\u0435
+    \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u044E\u0442\u0441\u044F. \u041D\u0430\u043A\u0430\u0437\u0430\u043D\u0438\u0435
+    \u0432\u0441\u0451 \u0440\u0430\u0432\u043D\u043E \u0431\u0443\u0434\u0435\u0442"
+  _personSprite: {fileID: 21300000, guid: 0888097f1a8b8df43b159db18e851fd9, type: 3}
+  _consentParameters: ceffffffceffffffceffffffceffffff
+  _failureParameters: ceffffffceffffffceffffffceffffff
 --- !u!114 &-5494921721208296963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +447,7 @@ MonoBehaviour:
   m_Name: Trader
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 552, y: 72}
+  position: {x: 552, y: 152}
   ports:
     keys:
     - Enter
@@ -276,7 +499,113 @@ MonoBehaviour:
     \u043C\u043E\u0438 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u044B. \u0412\u043E\u0437\u043C\u043E\u0436\u043D\u043E
     \u0443 \u043C\u0435\u043D\u044F \u0435\u0441\u0442\u044C \u0446\u0435\u043D\u043D\u044B\u0435
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B"
-  _personSprite: {fileID: 0}
+  _personSprite: {fileID: 21300000, guid: 737603dea7fe59b47b9d7fb3a3de0913, type: 3}
+  _consentParameters: ecffffffd3ffffff020000000e000000
+  _failureParameters: 0200000002000000fafffffff7ffffff
+--- !u!114 &-2738732083946675380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff082bcd00c47f1af5216698d4b8171, type: 3}
+  m_Name: Warrior
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1096, y: 104}
+  ports:
+    keys:
+    - Enter
+    - Right
+    - Left
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -2738732083946675380}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Right
+        node: {fileID: 6098400618770831350}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Right
+      _node: {fileID: -2738732083946675380}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -1182142477767958514}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Left
+      _node: {fileID: -2738732083946675380}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 733339595879548300}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  Right: 
+  Left: 
+  _personName: "\u0412\u043E\u0438\u043D"
+  _personText: "\u0421\u0440\u0430\u0436\u0430\u0439\u0441\u044F \u0441 \u0447\u0435\u0441\u0442\u044C\u044E"
+  _personSprite: {fileID: 21300000, guid: 0888097f1a8b8df43b159db18e851fd9, type: 3}
+  _consentParameters: 17000000000000004101000003000000
+  _failureParameters: c8feffff0000000023e2ffffb0ffffff
+--- !u!114 &-2592754245327465033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc04e018feed4aff960d61287fe4a2d3, type: 3}
+  m_Name: Death
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1896, y: -520}
+  ports:
+    keys:
+    - Enter
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -2592754245327465033}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Left
+        node: {fileID: -1529392479423747884}
+        reroutePoints: []
+      - fieldName: Right
+        node: {fileID: -1529392479423747884}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  _personName: "\u0421\u043C\u0435\u0440\u0442\u044C"
+  _personText: "\u0420\u0435\u043B\u0438\u043A\u0432\u0438\u0438 \u044D\u0442\u0438
+    \u0431\u044B\u043B\u0438 \u043C\u043E\u0438. \u0422\u0435\u043F\u0435\u0440\u044C
+    \u0442\u044B \u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0448\u044C\u0441\u044F
+    \u043C\u043E\u0438 \u043F\u043E\u0441\u043B\u0443\u0448\u043D\u0438\u043A\u043E\u043C"
+  _personSprite: {fileID: 21300000, guid: e71c21275e2feb64bb913f89ce351442, type: 3}
 --- !u!114 &-2363301461945242981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,7 +675,154 @@ MonoBehaviour:
     \u0432\u0441\u0435 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u044B\u0435
     \u0432\u0435\u0449\u0438. \u0421\u043F\u0440\u043E\u0441\u0438 \u043C\u043E\u044E
     \u0433\u043E\u0440\u043D\u0438\u0447\u043D\u0443\u044E."
-  _personSprite: {fileID: 0}
+  _personSprite: {fileID: 21300000, guid: 5d689695b9e4d3b48a7ff557bd3b10a8, type: 3}
+  _consentParameters: 0a000000000000000500000000000000
+  _failureParameters: fbffffff000000000a00000000000000
+--- !u!114 &-1648184804312091986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4469cf53bfb24ca792798ab9ceed05e2, type: 3}
+  m_Name: God
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1336, y: 664}
+  ports:
+    keys:
+    - Enter
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -1648184804312091986}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Left
+        node: {fileID: 8518891195921491788}
+        reroutePoints: []
+      - fieldName: Left
+        node: {fileID: 3847387495183173334}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  _personName: "\u0411\u043E\u0433"
+  _personText: .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+  _personSprite: {fileID: 21300000, guid: 64694af5ce8efa4418fcda961c4a4ca5, type: 3}
+--- !u!114 &-1529392479423747884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32fe7f510cafb0439b8876fcb150a8a, type: 3}
+  m_Name: King
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1672, y: -552}
+  ports:
+    keys:
+    - Enter
+    - Right
+    - Left
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -1529392479423747884}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Right
+        node: {fileID: -7020106136355099552}
+        reroutePoints: []
+      - fieldName: Right
+        node: {fileID: -6325401430210273219}
+        reroutePoints: []
+      - fieldName: Left
+        node: {fileID: -6325401430210273219}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Right
+      _node: {fileID: -1529392479423747884}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -2592754245327465033}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Left
+      _node: {fileID: -1529392479423747884}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -2592754245327465033}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  Right: 
+  Left: 
+  _personName: "\u041A\u043E\u0440\u043E\u043B\u044C \u0410\u0440\u0442\u0443\u0440"
+  _personText: "\u0422\u0432\u043E\u0439 \u0433\u0440\u0435\u0445 \u0432\u0435\u043B\u0438\u043A.
+    \u041F\u0440\u043E\u0449\u0435\u043D\u0438\u044F \u043D\u0435\u0442 \u0435\u043C\u0443.
+    \u041F\u0440\u0438\u0434\u0451\u0442\u0441\u044F \u043C\u043D\u0435 \u043B\u0438\u0447\u043D\u043E
+    \u0440\u0430\u0437\u043E\u0431\u0440\u0430\u0442\u044C\u0441\u044F \u0441 \u0442\u043E\u0431\u043E\u0439"
+  _personSprite: {fileID: 21300000, guid: 5d689695b9e4d3b48a7ff557bd3b10a8, type: 3}
+  _consentParameters: ceffffffceffffffceffffffceffffff
+  _failureParameters: ceffffffceffffffceffffffceffffff
+--- !u!114 &-1182142477767958514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4469cf53bfb24ca792798ab9ceed05e2, type: 3}
+  m_Name: God
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1352, y: 72}
+  ports:
+    keys:
+    - Enter
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -1182142477767958514}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Right
+        node: {fileID: -2738732083946675380}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  _personName: "\u0411\u043E\u0433"
+  _personText: "\u0421\u0440\u0430\u0436\u0430\u0442\u044C\u0441\u044F \u0441 \u0447\u0435\u0441\u0442\u044C\u044E
+    \u043F\u043E\u0445\u0432\u0430\u043B\u044C\u043D\u043E"
+  _personSprite: {fileID: 21300000, guid: 64694af5ce8efa4418fcda961c4a4ca5, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,7 +844,337 @@ MonoBehaviour:
   - {fileID: -7985232525380350655}
   - {fileID: 6098400618770831350}
   - {fileID: 8518891195921491788}
+  - {fileID: 3847387495183173334}
+  - {fileID: -2738732083946675380}
+  - {fileID: 733339595879548300}
+  - {fileID: -1182142477767958514}
+  - {fileID: -1648184804312091986}
+  - {fileID: 3244685232398903917}
+  - {fileID: 4368028263926360796}
+  - {fileID: -7020106136355099552}
+  - {fileID: 4055404979146440557}
+  - {fileID: -1529392479423747884}
+  - {fileID: -6325401430210273219}
+  - {fileID: 1988568625462552099}
+  - {fileID: -8414083555038830000}
+  - {fileID: -8300414520713779569}
+  - {fileID: -2592754245327465033}
   _current: {fileID: -2363301461945242981}
+--- !u!114 &733339595879548300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc04e018feed4aff960d61287fe4a2d3, type: 3}
+  m_Name: Death
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1352, y: 200}
+  ports:
+    keys:
+    - Enter
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 733339595879548300}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Left
+        node: {fileID: -2738732083946675380}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  _personName: "\u0421\u043C\u0435\u0440\u0442\u044C"
+  _personText: "\u0422\u0430\u043A\u043E\u0439 \u043B\u0451\u0433\u043A\u0438\u0439
+    \u043A\u043E\u043D\u0435\u0446 \u0434\u043B\u044F \u0442\u0430\u043A\u043E\u0433\u043E
+    \u043A\u0430\u043A \u0442\u044B \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u043C\u044F\u0433\u043A\u0438\u0439"
+  _personSprite: {fileID: 21300000, guid: e71c21275e2feb64bb913f89ce351442, type: 3}
+--- !u!114 &1988568625462552099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d221711fa34e268de5e10d2cd2cee6, type: 3}
+  m_Name: Wizard
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1144, y: -200}
+  ports:
+    keys:
+    - Enter
+    - Right
+    - Left
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 1988568625462552099}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Left
+        node: {fileID: -7985232525380350655}
+        reroutePoints: []
+      - fieldName: Right
+        node: {fileID: -7985232525380350655}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Right
+      _node: {fileID: 1988568625462552099}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -8300414520713779569}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Left
+      _node: {fileID: 1988568625462552099}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -8414083555038830000}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  Right: 
+  Left: 
+  _personName: "\u041C\u0430\u0433"
+  _personText: "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E
+    \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u044B\u0439. \u0412\u044B\u0436\u0438\u0432\u0435\u0442
+    \u043B\u0438 \u043E\u043D \u043E\u0442 \u044D\u043A\u0441\u043F\u0435\u0440\u0435\u043C\u0435\u043D\u0442\u043E\u0432
+    \u0441 \u043C\u0430\u0433\u0438\u0435\u0439"
+  _personSprite: {fileID: 21300000, guid: d6e48f5e886cee84a864c82e5529b419, type: 3}
+  _consentParameters: 32000000320000003200000032000000
+  _failureParameters: e2ffffff00000000c4ffffffecffffff
+--- !u!114 &3244685232398903917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32fe7f510cafb0439b8876fcb150a8a, type: 3}
+  m_Name: King
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1352, y: 328}
+  ports:
+    keys:
+    - Enter
+    - Right
+    - Left
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 3244685232398903917}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Right
+        node: {fileID: 3847387495183173334}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Right
+      _node: {fileID: 3244685232398903917}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 4368028263926360796}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Left
+      _node: {fileID: 3244685232398903917}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 4368028263926360796}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  Right: 
+  Left: 
+  _personName: "\u041A\u043E\u0440\u043E\u043B\u044C \u0410\u0440\u0442\u0443\u0440"
+  _personText: "\u0422\u0430\u043A \u0442\u044B \u0432\u044B\u0436\u0438\u043B. \u0412\u0438\u0434\u0438\u043C\u043E
+    \u0431\u043E\u0433 \u0442\u0435\u0431\u044F \u043E\u0431\u0435\u0440\u0435\u0433\u0430\u0435\u0442.
+    \u041D\u043E \u044D\u0442\u043E \u043D\u0435 \u043E\u0442\u043C\u0435\u043D\u044F\u0435\u0442
+    \u0442\u0432\u043E\u0435\u0439 \u0432\u0438\u043D\u044B"
+  _personSprite: {fileID: 21300000, guid: 5d689695b9e4d3b48a7ff557bd3b10a8, type: 3}
+  _consentParameters: 050000000c0000002000000004000000
+  _failureParameters: 17000000010000000200000005000000
+--- !u!114 &3847387495183173334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad7d05b985c47e5ad56537f67f9ed11, type: 3}
+  m_Name: Archer
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1096, y: 376}
+  ports:
+    keys:
+    - Enter
+    - Right
+    - Left
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 3847387495183173334}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Left
+        node: {fileID: 6098400618770831350}
+        reroutePoints: []
+      - fieldName: Right
+        node: {fileID: 8518891195921491788}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Right
+      _node: {fileID: 3847387495183173334}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 3244685232398903917}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Left
+      _node: {fileID: 3847387495183173334}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -1648184804312091986}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  Right: 
+  Left: 
+  _personName: "\u041B\u0443\u0447\u043D\u0438\u043A"
+  _personText: "\u0423 \u043D\u0430\u0441 \u0435\u0441\u0442\u044C \u0446\u0435\u043B\u044C
+    \u0434\u043B\u044F \u0443\u0441\u0442\u0440\u0430\u043D\u0435\u043D\u0438\u044F"
+  _personSprite: {fileID: 21300000, guid: 256599103070a9145a224aa8420bb96a, type: 3}
+  _consentParameters: 0600000002000000f9ffffff03000000
+  _failureParameters: 05000000feffffff05000000f4ffffff
+--- !u!114 &4055404979146440557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4469cf53bfb24ca792798ab9ceed05e2, type: 3}
+  m_Name: God
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1176, y: -360}
+  ports:
+    keys:
+    - Enter
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 4055404979146440557}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Left
+        node: {fileID: -8594959450359104528}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  _personName: "\u0411\u043E\u0433"
+  _personText: "\u0422\u044B \u043E\u0442\u043A\u0430\u0437\u0430\u043B\u0441\u044F
+    \u043E\u0442 \u0438\u0441\u043A\u0443\u0448\u0435\u043D\u0438\u044F. \u0417\u0430
+    \u044D\u0442\u043E \u0442\u044B \u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0448\u044C\u0441\u044F
+    \u043C\u043E\u0438 \u043F\u043E\u0441\u043B\u0430\u043D\u0438\u043A\u043E\u043C"
+  _personSprite: {fileID: 21300000, guid: 64694af5ce8efa4418fcda961c4a4ca5, type: 3}
+--- !u!114 &4368028263926360796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4469cf53bfb24ca792798ab9ceed05e2, type: 3}
+  m_Name: God
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1608, y: 360}
+  ports:
+    keys:
+    - Enter
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 4368028263926360796}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Right
+        node: {fileID: 3244685232398903917}
+        reroutePoints: []
+      - fieldName: Left
+        node: {fileID: 3244685232398903917}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  _personName: "\u0411\u043E\u0433"
+  _personText: "\u0422\u044F\u0436\u0435\u043B\u043E \u0441 \u0442\u043E\u0431\u043E\u0439"
+  _personSprite: {fileID: 21300000, guid: 64694af5ce8efa4418fcda961c4a4ca5, type: 3}
 --- !u!114 &6098400618770831350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,7 +1188,7 @@ MonoBehaviour:
   m_Name: King
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 856, y: 72}
+  position: {x: 840, y: 152}
   ports:
     keys:
     - Left
@@ -393,7 +1199,10 @@ MonoBehaviour:
       _node: {fileID: 6098400618770831350}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Enter
+        node: {fileID: 3847387495183173334}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -402,7 +1211,10 @@ MonoBehaviour:
       _node: {fileID: 6098400618770831350}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Enter
+        node: {fileID: -2738732083946675380}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -425,7 +1237,9 @@ MonoBehaviour:
   _personName: "\u041A\u043E\u0440\u043E\u043B\u044C \u0410\u0440\u0442\u0443\u0440"
   _personText: "\u0422\u0430\u043A \u0432\u043E\u0442 \u043A\u0430\u043A\u043E\u0439
     \u0442\u0432\u043E\u0439 \u0432\u044B\u0431\u043E\u0440..."
-  _personSprite: {fileID: 0}
+  _personSprite: {fileID: 21300000, guid: 5d689695b9e4d3b48a7ff557bd3b10a8, type: 3}
+  _consentParameters: 00000000000000000000000000000000
+  _failureParameters: 02000000030000000400000005000000
 --- !u!114 &8518891195921491788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,7 +1253,7 @@ MonoBehaviour:
   m_Name: Housemaid
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 856, y: 248}
+  position: {x: 808, y: 520}
   ports:
     keys:
     - Enter
@@ -462,7 +1276,10 @@ MonoBehaviour:
       _node: {fileID: 8518891195921491788}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Enter
+        node: {fileID: 3847387495183173334}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -471,7 +1288,10 @@ MonoBehaviour:
       _node: {fileID: 8518891195921491788}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Enter
+        node: {fileID: -1648184804312091986}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -482,4 +1302,6 @@ MonoBehaviour:
   _personName: "\u0413\u043E\u0440\u043D\u0438\u0447\u043D\u0430\u044F"
   _personText: "\u0425\u043E\u0440\u043E\u0448\u043E, \u0447\u0442\u043E \u0432\u044B
     \u0442\u0430\u043A\u043E\u0439 \u0432\u044B\u0431\u043E\u0440 \u0441\u0434\u0435\u043B\u0430\u043B\u0438"
-  _personSprite: {fileID: 0}
+  _personSprite: {fileID: 21300000, guid: b91dd5acab4ad9c4e97415b285d89a02, type: 3}
+  _consentParameters: fefffffffdfffffffcfffffffbffffff
+  _failureParameters: 35000000170000000c00000040000000

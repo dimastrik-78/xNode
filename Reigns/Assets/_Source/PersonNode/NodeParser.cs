@@ -9,12 +9,22 @@ namespace _Source.PersonNode
         [SerializeField] private PersonGraph _graph;
         [SerializeField] private Text _speaker;
         [SerializeField] private Text _dialogue;
+        [SerializeField] private Text _reputationText;
+        [SerializeField] private Text _moneyText;
+        [SerializeField] private Text _attitudePeopleText;
+        [SerializeField] private Text _beliefText;
         [SerializeField] private Image _speakerImage;
         [SerializeField] private KeyCode _leftSwap;
         [SerializeField] private KeyCode _rightSwap;
         [SerializeField] private KeyCode _backSwap;
 
-        private Coroutine _parser;
+        private IEnumerator _parser;
+
+        private int _reputation = 50;
+        private int _money = 50;
+        private int _attitudePeople = 50;
+        private int _belief = 50;
+        private bool _isConsent;
 
         private const string START_NODE_TEXT = "Exit";
         private const string PERSON_TEXT = "Person";
@@ -26,11 +36,35 @@ namespace _Source.PersonNode
                 if (basePerson.GetString() == START_NODE_TEXT)
                 {
                     _graph._current = basePerson;
-                    // break;
+                    break;
                 }
             }
+
+            _parser = ParseNode();
+            StartCoroutine(_parser);
+        }
+
+        private void SetParameters(BasePerson basePerson, string[] dataParts)
+        {
+            _speaker.text = dataParts[1];
+            _dialogue.text = dataParts[2];
+            _speakerImage.sprite = basePerson.GetSprite();
+        }
+
+        private void SelectionResult(BasePerson basePerson, bool isConsent, bool isBack)
+        {
+            int[] parameters = isConsent ? basePerson.ConsentEffect() : basePerson.EffectOnFailure();
+            int coefficient = isBack ? -1 : 1;
             
-            _parser = StartCoroutine(ParseNode());
+            _reputation += parameters[0] * coefficient;
+            _money += parameters[1] * coefficient;
+            _attitudePeople += parameters[2] * coefficient;
+            _belief += parameters[3] * coefficient;
+            
+            _reputationText.text = $"Репутация {_reputation}";
+            _moneyText.text = $"Деньги {_money}";
+            _attitudePeopleText.text = $"Отношение народа  {_attitudePeople}";
+            _beliefText.text = $"Вера {_belief}";
         }
         
         private IEnumerator ParseNode()
@@ -38,17 +72,14 @@ namespace _Source.PersonNode
             BasePerson basePerson = _graph._current;
             string data = basePerson.GetString();
             string[] dataParts = data.Split('/');
-            
             if (dataParts[0] == START_NODE_TEXT)
             {
                 ChangeNode(_graph._current.GetString());
             }
-            
+
             if (dataParts[0] == PERSON_TEXT)
             {
-                _speaker.text = dataParts[1];
-                _dialogue.text = dataParts[2];
-                // _speakerImage.sprite = basePerson.GetSprite();
+                SetParameters(basePerson, dataParts);
                 
                 KeyCode key = KeyCode.A;
                 yield return new WaitUntil(() =>
@@ -74,23 +105,27 @@ namespace _Source.PersonNode
                     return false;
                 });
                 yield return new WaitUntil(() => Input.GetKeyUp(key));
-                    
+
                 if (key == _leftSwap)
                 {
+                    _isConsent = false;
+                    SelectionResult(basePerson, _isConsent, false);
                     ChangeNode(basePerson.GetLeftSwapTrigger());
                 }
                 else if (key == _rightSwap)
                 {
+                    _isConsent = true;
+                    SelectionResult(basePerson, _isConsent, false);
                     ChangeNode(basePerson.GetRightSwapTrigger());
                 }
                 else if (key == _backSwap)
                 {
-                    ChangeNode(basePerson.GetBackSwapTrigger());
+                    ChangeNode(basePerson.GetBackSwapTrigger(), true);
                 }
             }
         }
 
-        private void ChangeNode(string fieldName)
+        private void ChangeNode(string fieldName, bool isBack = false)
         {
             if (_parser is not null)
             {
@@ -107,7 +142,12 @@ namespace _Source.PersonNode
                 }
             }
             
-            _parser = StartCoroutine(ParseNode());
+            if (isBack)
+            {
+                SelectionResult(_graph._current, _isConsent, true);
+            }
+            _parser = ParseNode();
+            StartCoroutine(_parser);
         }
     }
 }

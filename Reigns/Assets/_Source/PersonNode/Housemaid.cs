@@ -12,6 +12,8 @@ namespace _Source.PersonNode
         [SerializeField] private string _personName;
         [SerializeField] private string _personText;
         [SerializeField] private Sprite _personSprite;
+        [SerializeField] private int[] _consentParameters;
+        [SerializeField] private int[] _failureParameters;
 
         public override string GetLeftSwapTrigger()
         {
@@ -38,14 +40,14 @@ namespace _Source.PersonNode
             return _personSprite;
         }
 
-        public override void ConsentEffect()
+        public override int[] ConsentEffect()
         {
-            Debug.Log("Поднимается доверие короля, но падает экономика");
+            return _consentParameters;
         }
         
-        public override void EffectOnFailure()
+        public override int[] EffectOnFailure()
         {
-            Debug.Log("Отнимается доверие короля");
+            return _failureParameters;
         }
     }
 }

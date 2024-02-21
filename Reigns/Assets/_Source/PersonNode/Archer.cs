@@ -1,20 +1,21 @@
 ﻿using UnityEngine;
+using XNode;
 
 namespace _Source.PersonNode
 {
-    public class Trader : BasePerson
+    public class Archer : BasePerson
     {
-        [Input] public int Enter;
+        [Node.Input] public int Enter;
 
-        [Output] public string Right;
-        [Output] public string Left;
+        [Node.Output] public string Right;
+        [Node.Output] public string Left;
 
         [SerializeField] private string _personName;
         [SerializeField] private string _personText;
         [SerializeField] private Sprite _personSprite;
         [SerializeField] private int[] _consentParameters;
         [SerializeField] private int[] _failureParameters;
-        
+
         public override string GetLeftSwapTrigger()
         {
             return "Right";
@@ -24,7 +25,7 @@ namespace _Source.PersonNode
         {
             return "Left";
         }
-        
+		
         public override string GetBackSwapTrigger()
         {
             return "Enter";

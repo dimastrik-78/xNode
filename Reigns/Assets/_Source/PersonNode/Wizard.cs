@@ -2,7 +2,7 @@
 
 namespace _Source.PersonNode
 {
-    public class Trader : BasePerson
+    public class Wizard : BasePerson
     {
         [Input] public int Enter;
 
@@ -14,7 +14,7 @@ namespace _Source.PersonNode
         [SerializeField] private Sprite _personSprite;
         [SerializeField] private int[] _consentParameters;
         [SerializeField] private int[] _failureParameters;
-        
+
         public override string GetLeftSwapTrigger()
         {
             return "Right";
@@ -24,7 +24,7 @@ namespace _Source.PersonNode
         {
             return "Left";
         }
-        
+		
         public override string GetBackSwapTrigger()
         {
             return "Enter";
