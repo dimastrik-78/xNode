@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using XNode;
 
 namespace _Source.PersonNode
 {
     public class Death : BasePerson
     {
-        [Input] public int Enter;
+        [Node.Input] public int Enter;
 
         [SerializeField] private string _personName;
         [SerializeField] private string _personText;

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using XNode;
+using Node = XNode.Node;
 
 namespace _Source.PersonNode
 {

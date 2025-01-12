@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Name: God
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1384, y: -216}
+  position: {x: 1752, y: -296}
   ports:
     keys:
     - Enter
@@ -192,6 +192,9 @@ MonoBehaviour:
       connections:
       - fieldName: Right
         node: {fileID: 1988568625462552099}
+        reroutePoints: []
+      - fieldName: Right
+        node: {fileID: 6493547402045935431}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -859,6 +862,7 @@ MonoBehaviour:
   - {fileID: -8414083555038830000}
   - {fileID: -8300414520713779569}
   - {fileID: -2592754245327465033}
+  - {fileID: 6493547402045935431}
   _current: {fileID: -2363301461945242981}
 --- !u!114 &733339595879548300
 MonoBehaviour:
@@ -938,6 +942,9 @@ MonoBehaviour:
       connections:
       - fieldName: Enter
         node: {fileID: -8300414520713779569}
+        reroutePoints: []
+      - fieldName: Enter
+        node: {fileID: 6493547402045935431}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -1240,6 +1247,67 @@ MonoBehaviour:
   _personSprite: {fileID: 21300000, guid: 5d689695b9e4d3b48a7ff557bd3b10a8, type: 3}
   _consentParameters: 00000000000000000000000000000000
   _failureParameters: 02000000030000000400000005000000
+--- !u!114 &6493547402045935431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d221711fa34e268de5e10d2cd2cee6, type: 3}
+  m_Name: Wizard
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1512, y: -200}
+  ports:
+    keys:
+    - Enter
+    - Right
+    - Left
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 6493547402045935431}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Right
+        node: {fileID: 1988568625462552099}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Right
+      _node: {fileID: 6493547402045935431}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -8300414520713779569}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Left
+      _node: {fileID: 6493547402045935431}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Enter: 0
+  Right: 
+  Left: 
+  _personName: "\u0412\u0412\u0412\u0412"
+  _personText: "\u042B\u042B\u042B\u042B"
+  _personSprite: {fileID: 21300000, guid: d6e48f5e886cee84a864c82e5529b419, type: 3}
+  _consentParameters: 32000000320000003200000032000000
+  _failureParameters: e2ffffff00000000c4ffffffecffffff
 --- !u!114 &8518891195921491788
 MonoBehaviour:
   m_ObjectHideFlags: 0
